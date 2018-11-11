@@ -1,0 +1,46 @@
+h1 {
+  text-align: center;
+}
+
+.form_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.form {
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 0.3rem;
+  padding: 2rem;
+  width: 400px;
+  &_field {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    label {
+      display:block;
+      margin-bottom: 0.5rem;
+    }
+    input[type="text"],input[type="email"], input[type="password"]  {
+      width: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
+      border: 1px solid rgb(228, 228, 228);
+      border-radius: 0.3rem;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &_action {
+    .form_btn {
+      font-size: 15px;
+      width: 100%;
+      background-color: darken(#87cefa, 20%);
+      color: white;
+      border-right: #ff5a5f;
+      padding: 1rem 0;
+      border-radius: 0.3rem;
+    }
+  }
+}
