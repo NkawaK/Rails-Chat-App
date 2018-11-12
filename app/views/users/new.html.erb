@@ -1,8 +1,8 @@
 <div class="form_wrapper">
   <div class="form">
     <h1>会員登録</h1>
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_massages'%>
+    <%= form_for(@user, url: signup_path_url) do |f| %>
+    <%= render 'shared/error_mesages'%>
       <div class="form_field">
         <%= f.label :name, "アカウント名"%>
         <%= f.text_field :name, autofocus: true, autocomplete: "name"%>
