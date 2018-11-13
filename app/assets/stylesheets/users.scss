@@ -43,3 +43,26 @@ h1 {
     }
   }
 }
+
+.user_page {
+  text-align: center;
+  border: 1px solid rgb(228, 228, 228);
+  img {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 50%;
+  }
+  .user_name {
+    font-size: 30px;
+  }
+  .build_room, .join_room {
+    font-size: 25px;
+    background-color: #c0c0c0;
+    border: 1px solid black;
+    width: 25%;
+    margin-left: 37%;
+    text-align: center;
+  }
+}
