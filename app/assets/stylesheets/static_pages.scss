@@ -17,6 +17,54 @@ header {
         margin: 15px 40px;
       }
     }
+    .header_icon {
+      position: relative;
+      float: right;
+      line-height: 65px;
+      margin: 0 40px;
+      padding: 6px 40px 0 40px;
+      background-color: rgba(255, 255, 255, 0.3);
+      img {
+        border: 1px solid rgb(228, 228, 228);
+        border-radius: 50%;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+      }
+      .name {
+        position:absolute;
+        top: 20px;
+        left: 30px;
+        color: white;
+        font-size: 10px;
+      }
+      .header_mypage {
+        display: none;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        width: 116px;
+        top:50px;
+        right: 0.4px;
+        margin-top: 15px;
+        font-size: 15px;
+        background-color: rgba(255, 255, 255, 1.0);
+        border: 1px solid rgb(228, 228, 228);
+      }
+      .header_logout {
+        display: none;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        width: 116px;
+        top:35px;
+        right: -1px;
+        margin-top: 15px;
+        font-size: 15px;
+        background-color: rgba(255, 255, 255, 1.0);
+        border: 1px solid rgb(228, 228, 228);
+      }
+    }
     .header_login {
       float: right;
       a {

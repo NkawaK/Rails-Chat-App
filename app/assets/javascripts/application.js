@@ -14,3 +14,17 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+$(document).on('turbolinks:load', function() {
+  $('.header_icon').hover(
+      function(){
+        $('.header_mypage').fadeIn();
+        $('.header_logout').fadeIn();
+      },
+      function(){
+        $('.header_mypage').fadeOut();
+        $('.header_logout').fadeOut();
+      }
+    );
+});

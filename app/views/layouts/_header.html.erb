@@ -3,8 +3,21 @@
     <div class="header_title">
       <a href="/">Talk About</a>
     </div>
-    <div class="header_login">
-      <a class="login_btn" href="#">ログイン</a>
+    <% if logged_in? %>
+    <div class="header_icon">
+      <%= image_tag 'icon.png'%>
+      <span class="name"><%= @current_user.name %></span>
+      <sapn class="header_mypage">
+        <%= link_to "マイページ", user_url(@current_user) %>
+      </span>
+      <sapn class="header_logout">
+        <%= link_to "ログアウト",logout_url, method: :delete %>
+      </span>
     </div>
+    <% else %>
+    <div class="header_login">
+      <%= link_to "ログイン", login_path %>
+    </div>
+    <% end %>
   </div>
 </header>
