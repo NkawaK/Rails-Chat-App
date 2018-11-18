@@ -1,13 +1,28 @@
 <div class="user_page">
-    <%= image_tag 'icon.png'%>
-    <div class="user_name">
-      <%= @user.name%>
-    </div>
-    <div class="build_room">
-      作成したルーム
-    </div>
-    <div class="join_room">
-      参加中のルーム
-    </div>
+  <%= image_tag 'icon.png'%>
+  <div class="user_name">
+    <%= @user.name %>
   </div>
+  <div class="build_room">
+    作成したルーム
+  </div>
+  <div class="join_room">
+    参加中のルーム
+  </div>
+    <%= form_for(:room, url: rooms_path) do |f| %>
+      <div class="room_form">
+        <div>
+          <%= f.label :keyword, "ルームの話題" %>
+          <%= f.text_field :keyword, autofocus: true, autocomplete: "keyword" %>
+        </div>
+        <div>
+          <% capacity_array = (1..99).map{ |n| [n.to_s+'人', n]} %>
+          <%= f.label :capacity, "最大人数" %>
+          <%= f.select :capacity ,capacity_array %>
+        </div>
+        <div>
+          <%= f.submit "ルームを作成"%>
+        </div>
+      </div>
+    <% end %>
 </div>
