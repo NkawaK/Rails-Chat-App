@@ -1,6 +1,10 @@
 class RoomsController < ApplicationController
   def show
-    @room = Room.find(params[:id])
+    @room = Room.find_by(id: params[:id])
+    if @room == nil
+      flash[:danger] = 'ルームが見つかりませんでした'
+      redirect_to current_user
+    end
   end
 
   def create
