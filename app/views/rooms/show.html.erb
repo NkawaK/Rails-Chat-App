@@ -1,9 +1,7 @@
 <div class="chat_area">
-  <div class="chat_room">
-    <div>チャットエリア</div>
-    <div class="chat_form">
-      <textarea name="name" class='message_box'></textarea>
-      <input type="submit" value="投稿">
-    </div>
+  <p class="room_keyword">このルームの話題:<%= @room.keyword %></p>
+  <div class="chat_form">
+    <textarea class="text_box"></textarea>
+    <input type="submit" value="投稿">
   </div>
 </div>

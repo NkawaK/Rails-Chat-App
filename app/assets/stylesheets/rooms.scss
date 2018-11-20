@@ -1,13 +1,28 @@
 .chat_area {
-  width: 70%;
-  background-color: #b0c4de;
-  margin-left: 15%;
-  .chat_room {
-    color: #b0c4de;
+   background-image: image-url('/background.jpg');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+   width: 70%;
+   margin: 0 auto;
+  .room_keyword {
+    display: block;
     text-align: center;
-    padding-bottom: 80%;
-    .chat_form {
-      margin-top: 68%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    width:50%;
+  }
+  .chat_form {
+    background-color: rgba(34, 49, 52, 1.0);
+	  width:70%;
+	  position:fixed;
+	  bottom:0;
+    text-align: center;
+    .text_box {
+      width: 35%;
+      border-radius: 15px;
     }
   }
 }
