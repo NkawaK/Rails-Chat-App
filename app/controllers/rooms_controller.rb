@@ -1,4 +1,8 @@
 class RoomsController < ApplicationController
+
+  def index
+  end
+
   def show
     @room = Room.find_by(id: params[:id])
     if @room == nil

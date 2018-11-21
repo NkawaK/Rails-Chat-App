@@ -3,6 +3,10 @@
     <div class="header_title">
       <a href="/">Talk About</a>
     </div>
+    <%= form_tag('/rooms/index', method: 'get') do %>
+      <%= text_field_tag :keyword,params[:keyword], autofocus: true, autocomplete: "room_keyword"%>
+      <%= submit_tag '検索'%>
+    <% end %>
     <% if logged_in? %>
     <div class="header_icon">
       <%= image_tag 'icon.png'%>

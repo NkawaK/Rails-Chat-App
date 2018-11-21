@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'signup_path', to:'users#new'
   post '/signup_path', to: 'users#create'
   post '/rooms_path', to: 'rooms#create'
+  get '/rooms/index', to: 'rooms#index'
   resources :users
   resources :rooms
 end
