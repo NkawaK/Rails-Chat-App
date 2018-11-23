@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
 
   def index
+    @rooms = Room.serch(params[:keyword])
   end
 
   def show

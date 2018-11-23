@@ -1,0 +1,12 @@
+<% @rooms.each do |room| %>
+<% @user = User.find_by(id: RoomUser.find_author(room)) %>
+<h2 class='search_title'>検索結果(<%= @rooms.count %>件)</h2>
+<div class='result_index'>
+  <ul>
+    <li>ルームの話題:<%= room.keyword %></li>
+    <li>参加状況:<%= room.user_ids.count%>/<%= room.capacity %>人</li>
+    <li>作成者: <%= link_to @user.name, @user %></li>
+    <li class='to_room'><%= link_to 'ルームに移動する', room %></li>
+  </ul>
+</div>
+<% end %>
