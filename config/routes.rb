@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/signup_path', to: 'users#create'
   post '/rooms_path', to: 'rooms#create'
   get '/rooms/index', to: 'rooms#index'
+  post 'join_path', to: 'room_users#new'
   resources :users
   resources :rooms
 end
