@@ -1,9 +1,13 @@
 <div class="chat_area">
   <p class="room_keyword">このルームの話題:<%= @room.keyword %></p>
+  <div class="messages">
+    <p><%= render @messages %></p>
+  </div>
   <div class="chat_form">
   <% if room_user? %>
-    <textarea class="text_box"></textarea>
-    <input type="submit" value="投稿">
+    <form>
+      <input type="text" data-behavior="room_speaker">
+    </form>
   <% else %>
     <%= form_for(:room_user, url: join_path_url) do |f| %>
     <%= hidden_field_tag :id, @room.id %>
