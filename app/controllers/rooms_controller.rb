@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find_by(id: params[:id])
-    @messages = Message.all
+    @messages = @room.messages
     if @room == nil
       flash[:danger] = 'ルームが見つかりませんでした'
       redirect_to current_user

@@ -2,6 +2,7 @@ module SessionsHelper
   #渡されたユーザーでログインする
   def log_in(user)
     session[:user_id] = user.id
+    cookies.permanent.signed[:user_id] = user.id
   end
 
   def current_user
@@ -11,10 +12,11 @@ module SessionsHelper
   end
 
   def logged_in?
-    !current_user.nil?
+    !@current_user.nil?
   end
 
   def log_out
+    cookies.delete(:user_id)
     session.delete(:user_id)
     @current_user = nil
   end

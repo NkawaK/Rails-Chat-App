@@ -1,6 +1,6 @@
 <div class="chat_area">
   <p class="room_keyword">このルームの話題:<%= @room.keyword %></p>
-  <div class="messages">
+  <div id="messages", data-room_id="<%= @room.id %>">
     <p><%= render @messages %></p>
   </div>
   <div class="chat_form">
