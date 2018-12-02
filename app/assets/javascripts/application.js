@@ -20,13 +20,25 @@
 
 $(document).on('turbolinks:load', function() {
   $('.header_icon').hover(
-      function(){
-        $('.header_mypage').fadeIn();
-        $('.header_logout').fadeIn();
-      },
-      function(){
-        $('.header_mypage').fadeOut();
-        $('.header_logout').fadeOut();
-      }
-    );
+    function(){
+      $('.header_mypage').fadeIn();
+      $('.header_logout').fadeIn();
+    },
+    function(){
+      $('.header_mypage').fadeOut();
+      $('.header_logout').fadeOut();
+    }
+  );
+  $('.build_room').click(
+    function() {
+      var target = $(this).data('target');
+      $('#' + target).slideToggle();
+    }
+  );
+  $('.join_room').click(
+    function() {
+      var target = $(this).data('target');
+      $('#' + target).slideToggle();
+    }
+  );
 });

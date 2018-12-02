@@ -6,9 +6,9 @@
     <% if logged_in? %>
     <div class="header_icon">
       <%= image_tag 'icon.png'%>
-      <span class="name"><%= @current_user.name %></span>
+      <span class="name"><%= current_user.name %></span>
       <sapn class="header_mypage">
-        <%= link_to "マイページ", user_url(@current_user) %>
+        <%= link_to "マイページ", user_url(current_user) %>
       </span>
       <sapn class="header_logout">
         <%= link_to "ログアウト",logout_url, method: :delete %>

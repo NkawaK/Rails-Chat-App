@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/rooms_path', to: 'rooms#create'
   get '/rooms/index', to: 'rooms#index'
   post 'join_path', to: 'room_users#new'
-  mount ActionCable.server => '/cable'
   resources :users
   resources :rooms
+  mount ActionCable.server => '/cable'
 end

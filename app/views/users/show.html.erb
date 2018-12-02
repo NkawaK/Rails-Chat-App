@@ -3,12 +3,31 @@
   <div class="user_name">
     <%= @user.name %>
   </div>
-  <div class="build_room">
+  <div class="build_room" data-target="build_room_list">
     作成したルーム
   </div>
-  <div class="join_room">
+  <ul id="build_room_list">
+    <% @paginate_build_room.each do |room| %>
+      <li>ルームの話題:<%= room.keyword %></li>
+      <li>参加状況:<%= room.user_ids.count%>/<%= room.capacity %>人</li>
+      <li class='to_room'><%= link_to 'ルームに移動する', room %></li>
+    <% end %>
+    <%= paginate(@paginate_build_room)%>
+  </ul>
+  <div class="join_room" data-target="join_room_list">
     参加中のルーム
   </div>
+  <ul id="join_room_list">
+  <% @paginate_join_room.each do |room| %>
+    <% author = User.find_by(id: RoomUser.find_author(room)) %>
+      <li>ルームの話題:<%= room.keyword %></li>
+      <li>参加状況:<%= room.user_ids.count%>/<%= room.capacity %>人</li>
+      <li>作成者: <%= link_to author.name, author %></li>
+      <li class='to_room'><%= link_to 'ルームに移動する', room %></li>
+    <% end %>
+    <%= paginate(@paginate_join_room)%>
+  </ul>
+  <% if @user.id == current_user.id%>
     <%= form_for(:room, url: rooms_path) do |f| %>
       <div class="room_form">
         <div>
@@ -25,4 +44,5 @@
         </div>
       </div>
     <% end %>
+  <% end %>
 </div>
