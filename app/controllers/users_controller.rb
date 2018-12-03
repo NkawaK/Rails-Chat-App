@@ -11,8 +11,8 @@ class UsersController < ApplicationController
         @join_rooms << room
       end
     end
-    @paginate_build_room = Kaminari.paginate_array(@build_rooms).page(params[:page]).per(1)
-    @paginate_join_room = Kaminari.paginate_array(@join_rooms).page(params[:page]).per(1)
+    @paginate_build_room = Kaminari.paginate_array(@build_rooms).page(params[:page]).per(10)
+    @paginate_join_room = Kaminari.paginate_array(@join_rooms).page(params[:page]).per(10)
   end
 
   def new

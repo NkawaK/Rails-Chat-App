@@ -1,6 +1,6 @@
+<h2 class='search_title'>検索結果(<%= @count %>件)</h2>
 <% @rooms.each do |room| %>
 <% @user = User.find_by(id: RoomUser.find_author(room)) %>
-<h2 class='search_title'>検索結果(<%= @rooms.count %>件)</h2>
 <div class='result_index'>
   <ul>
     <li>ルームの話題:<%= room.keyword %></li>
@@ -14,3 +14,4 @@
   </ul>
 </div>
 <% end %>
+<%= paginate @rooms %>

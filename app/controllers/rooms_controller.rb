@@ -1,7 +1,8 @@
 class RoomsController < ApplicationController
 
   def index
-    @rooms = Room.serch(params[:keyword])
+    @rooms = Room.serch(params[:keyword]).page(params[:page]).per(1)
+    @count = Room.serch(params[:keyword]).count
   end
 
   def show

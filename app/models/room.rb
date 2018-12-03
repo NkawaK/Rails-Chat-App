@@ -5,10 +5,6 @@ class Room < ApplicationRecord
   validates :keyword, presence: true, length: { maximum: 20}
 
   def self.serch(keyword)
-    if keyword
-      Room.where(['keyword LIKE ?', "#{keyword}"])
-    else
-      Room.all
-    end
+    Room.where(['keyword LIKE ?', "%#{keyword}%"])
   end
 end
