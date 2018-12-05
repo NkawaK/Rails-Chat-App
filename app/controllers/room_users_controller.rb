@@ -1,7 +1,7 @@
 class RoomUsersController < ApplicationController
 
   def new
-    redirect_to current_user and return if no_vacancy?
+    logged_in_user and return unless logged_in?
     @room_user = RoomUser.new(user_id: current_user[:id], room_id: params[:id])
     @room_user.save
     redirect_to @room

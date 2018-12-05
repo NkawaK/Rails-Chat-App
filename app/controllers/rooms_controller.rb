@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    store_location unless logged_in?
     @room = Room.find_by(id: params[:id])
     @messages = @room.messages
     if @room == nil

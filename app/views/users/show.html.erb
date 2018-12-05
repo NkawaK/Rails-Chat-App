@@ -17,7 +17,7 @@
     <%= render 'paginate_join_room' %>
     <%= paginate @paginate_join_room %>
   </ul>
-  <% if @user.id == current_user.id%>
+  <% if @user.id == session[:user_id]%>
     <%= form_for(:room, url: rooms_path) do |f| %>
       <div class="room_form">
         <div>

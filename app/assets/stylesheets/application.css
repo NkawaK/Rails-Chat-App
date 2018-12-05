@@ -37,3 +37,13 @@
    border-radius: 2px;
    text-align: center;
  }
+
+ .to_room {
+   background-color: white;
+   border: 1px solid rgb(228, 228, 228);
+   border-radius: 5px;
+   display: inline-block;
+   margin-left: 2px;
+   transition: all 0.5s;
+   text-decoration: none;
+ }
