@@ -1,5 +1,0 @@
-<% @paginate_build_room.each do |room| %>
-  <li>ルームの話題:<%= room.keyword %></li>
-  <li>参加状況:<%= room.user_ids.count%>/<%= room.capacity %>人</li>
-  <li class='to_room'><%= link_to 'ルームに移動する', room %></li>
-<% end %>

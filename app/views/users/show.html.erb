@@ -3,19 +3,11 @@
   <div class="user_name">
     <%= @user.name %>
   </div>
-  <div class="build_room" data-target="build_room_list">
-    作成したルーム
-  </div>
-  <ul id="build_room_list">
-    <%= render 'paginate_build_room' %>
-    <%= paginate @paginate_build_room %>
-  </ul>
   <div class="join_room" data-target="join_room_list">
     参加中のルーム
   </div>
   <ul id="join_room_list">
-    <%= render 'paginate_join_room' %>
-    <%= paginate @paginate_join_room %>
+    <%= render 'paginate_rooms' %>
   </ul>
   <% if @user.id == session[:user_id]%>
     <%= form_for(:room, url: rooms_path) do |f| %>

@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @build_rooms = []
-    @join_rooms = []
+    @pagenate_rooms = []
+    build_rooms = []
+    join_rooms = []
     @user.rooms.each do |room|
-      if @user.id == RoomUser.find_author(room)
-        @build_rooms << room
-      else
-        @join_rooms << room
-      end
+      @user.id == RoomUser.find_author(room) ? build_rooms << room : join_rooms << room
     end
-    @paginate_build_room = Kaminari.paginate_array(@build_rooms).page(params[:page]).per(10)
-    @paginate_join_room = Kaminari.paginate_array(@join_rooms).page(params[:page]).per(10)
+    @paginate_rooms = Kaminari.paginate_array(build_rooms +join_rooms).page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash.now[:success] = 'ユーザーを登録しました！'
-      redirect_to @user
+      redirect_back_or @user
     else
       render 'new'
     end
