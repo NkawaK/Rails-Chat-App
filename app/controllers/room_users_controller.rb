@@ -4,6 +4,7 @@ class RoomUsersController < ApplicationController
     logged_in_user and return unless logged_in?
     @room_user = RoomUser.new(user_id: current_user[:id], room_id: params[:id])
     @room_user.save
+    @room = Room.find(params[:id])
     redirect_to @room
   end
 
