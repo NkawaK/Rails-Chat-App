@@ -1,3 +1,4 @@
 <div class="others_message">
-  <p><%= "#{User.find(message.user_id).name}: #{message.content}" %></p>
+  <p class="chat_message"><%= image_tag 'icon.png'%><%= ":#{message.content}" %></p>
+  <p class="chat_user_name"><%= "#{User.find(message.user_id).name}" %></p>
 </div>

@@ -1,5 +1,31 @@
 .my_message {
   text-align: right;
+  .chat_message {
+    font-size: 20px;
+  }
+  img {
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 50%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+  }
+  .chat_user_name {
+    font-size: 5px;
+  }
 }
 .others_message {
+  .chat_message {
+    font-size: 20px;
+  }
+  img {
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 50%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+  }
+  .chat_user_name {
+    font-size: 5px;
+  }
 }
