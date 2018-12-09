@@ -5,7 +5,11 @@ document.addEventListener 'turbolinks:load', ->
     disconnected: ->
 
     received: (data) ->
-      $('#messages').append data['message']
+      show_user = $('#show_user').data('show_user')
+      if data['chat_user'] == show_user.toString()
+        $('#messages').append data['message_right']
+      else
+        $('#messages').append data['message_left']
 
     speak: (message) ->
       @perform 'speak', message: message
