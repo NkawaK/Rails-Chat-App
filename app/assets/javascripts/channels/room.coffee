@@ -10,6 +10,7 @@ document.addEventListener 'turbolinks:load', ->
         $('#messages').append data['message_right']
       else
         $('#messages').append data['message_left']
+      $("html,body").animate({scrollTop:100});
 
     speak: (message) ->
       @perform 'speak', message: message
