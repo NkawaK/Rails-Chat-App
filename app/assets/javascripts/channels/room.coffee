@@ -10,6 +10,7 @@ document.addEventListener 'turbolinks:load', ->
         $('#messages').append data['message_right']
       else
         $('#messages').append data['message_left']
+      $("#chat_area").scrollTop( $("#chat_area")[0].scrollHeight )
 
     speak: (message) ->
       @perform 'speak', message: message
@@ -19,3 +20,7 @@ document.addEventListener 'turbolinks:load', ->
       App.room.speak event.target.value
       event.target.value = ''
       event.preventDefault()
+
+  $(window).load ->
+    $("#chat_area").scrollTop($("#chat_area")[0].scrollHeight);
+  

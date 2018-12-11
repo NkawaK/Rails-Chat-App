@@ -1,4 +1,4 @@
-<div class="chat_area">
+<div id="chat_area">
   <p class="room_keyword">このルームの話題:<%= @room.keyword %></p>
   <div id="show_user" data-show_user="<%= session[:user_id] %>"></div>
   <div id="messages", data-room_id="<%= @room.id %>">
