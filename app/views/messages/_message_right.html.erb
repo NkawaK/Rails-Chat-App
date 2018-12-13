@@ -1,4 +1,4 @@
 <div class="my_message">
-  <p class="chat_message"><%= "#{message.content}:" %><%= image_tag 'icon.png'%></p>
+  <div class="chat_message"><%= image_tag 'icon.png'%><%= simple_format(message.content + ':', {}, wrapper_tag: "div") %></div>
   <p class="chat_user_name"><%= "#{User.find(message.user_id).name}" %></p>
 </div>

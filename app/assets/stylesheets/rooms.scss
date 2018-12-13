@@ -4,7 +4,7 @@
    background-repeat: no-repeat;
    background-size: cover;
    overflow: auto;
-   height: 750px;
+   height: 650px;
    width: 70%;
    margin: 0 auto;
   .room_keyword {
@@ -19,11 +19,17 @@
     background-color: rgba(34, 49, 52, 1.0);
 	  width:70%;
 	  position:fixed;
+    height: 100px;
 	  bottom:0;
     text-align: center;
     .text_box {
+      margin-top: 5px;
       width: 35%;
-      border-radius: 15px;
+      height: 50px;
+      border-radius: 5px;
+    }
+    .chat_button {
+      width:50px;
     }
   }
 }

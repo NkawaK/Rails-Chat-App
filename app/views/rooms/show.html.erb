@@ -6,9 +6,8 @@
   </div>
   <div class="chat_form">
   <% if room_user? %>
-    <form>
-      <input type="text" data-behavior="room_speaker">
-    </form>
+      <textarea class="text_box" type="text" data-behavior="room_speaker"></textarea></br>
+      <button type="submit" class="chat_button">投稿</button>
   <% elsif @room.capacity == @room.user_ids.count %>
     <dic class='to_room'>満室です</div>
   <% else %>
