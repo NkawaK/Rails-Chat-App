@@ -1,11 +1,11 @@
 <% if message.user == current_user %>
   <div class="my_message">
-    <div class="chat_message"><%= image_tag 'icon.png'%><%= simple_format(message.content + ':', {}, wrapper_tag: "div") %></div>
-    <p class="chat_user_name"><%= "#{User.find(message.user_id).name}" %></p>
+    <div class="chat_message"><%= simple_format(message.content, {}, wrapper_tag: "div class='my_messages'") %><%= image_tag 'icon.png'%></div>
+    <p class="chat_user_name"><%=link_to User.find(message.user_id).name, message.user %></p>
   </div>
 <% else %>
   <div class="others_message">
-    <div class="chat_message"><%= image_tag 'icon.png'%><%= simple_format(':' + message.content, {}, wrapper_tag: "div") %></div>
-    <p class="chat_user_name"><%= "#{User.find(message.user_id).name}" %></p>
+    <div class="chat_message"><%= image_tag 'icon.png'%><%= simple_format(message.content, {}, wrapper_tag: "div class='others_messages'") %></div>
+    <p class="chat_user_name"><%=link_to User.find(message.user_id).name, message.user %></p>
   </div>
 <% end %>

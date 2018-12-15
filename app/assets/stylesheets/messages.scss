@@ -2,6 +2,12 @@
   text-align: right;
   .chat_message {
     font-size: 20px;
+    .my_messages {
+      display: inline-block;
+      border: 1px solid black;
+      background-color: #7fffd4;
+      border-radius: 10px;
+    }
   }
   img {
     border: 1px solid rgb(228, 228, 228);
@@ -9,14 +15,24 @@
     background-color: white;
     width: 30px;
     height: 30px;
+    margin-bottom: -6px;
   }
   .chat_user_name {
     font-size: 5px;
+    a {
+      text-decoration: none;
+    }
   }
 }
 .others_message {
   .chat_message {
     font-size: 20px;
+    .others_messages {
+      display: inline-block;
+      border: 1px solid black;
+      background-color: #afeeee;
+      border-radius: 10px;
+    }
   }
   img {
     border: 1px solid rgb(228, 228, 228);
@@ -24,8 +40,12 @@
     background-color: white;
     width: 30px;
     height: 30px;
+    margin-bottom: -6px;
   }
   .chat_user_name {
     font-size: 5px;
+    a {
+      text-decoration: none;
+    }
   }
 }
